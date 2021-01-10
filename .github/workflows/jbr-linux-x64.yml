@@ -1,18 +1,16 @@
 name: jbr-linux-x64
 
 on:
+  workflow_dispatch:
   push:
     branches: 
       - master
-  watch:
-    types: [started]
   schedule:
     - cron: 0 0 1 * *
 
 jobs:
   build:
     runs-on: ubuntu-18.04
-    if: github.event.repository.owner.id == github.event.sender.id
     steps:
     - name: Clone Repository
       uses: actions/checkout@v1
