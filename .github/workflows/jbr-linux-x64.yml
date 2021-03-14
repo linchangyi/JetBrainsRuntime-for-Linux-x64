@@ -37,7 +37,7 @@ jobs:
       run: |
         git config --global core.autocrlf input
         hg clone http://hg.openjdk.java.net/openjfx/11-dev/rt
-        git clone -b master --single-branch https://github.com/JetBrains/JetBrainsRuntime.git
+        git clone --branch jb11_0_9_1-b1275 https://github.com/JetBrains/JetBrainsRuntime.git
         cd JetBrainsRuntime
         mv ../idea.patch ./
         patch -p1 < idea.patch
